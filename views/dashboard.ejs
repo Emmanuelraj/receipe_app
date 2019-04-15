@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--support for  IE8 or IE9-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <!--rwd-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>DashBoard</title>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+       <link rel="stylesheet" href="/assets/master.css">
+</head>
+  <body>
+
+
+
+
+        <h1>Welcome DashBoard</h1>
+        <p>Welcome <%=user.name%></p>
+
+        <div class="well">
+          <button type="button" name="button" class="btn-primary btn-block" data-toggle="modal" data-target="#addModal">Add Recipe</button>
+           <ul>
+             <%for(var i=0;i<receipes.length;i++)
+             {%>
+                   <h4> <%=receipes[i].receipe%>
+
+                     <button type="button" class="btn-default pull-right" data-toggle="collapse" href="#<%=receipes[i]._id%>" aria-expanded="false" aria-controls="<%=receipes[i]._id%>">View
+
+                       <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                     </button>
+
+                   </h4>
+
+                   <div class="collapse" id="<%=receipes[i]._id%>">
+                            <br/>
+                            <br/>
+
+                            <p> <strong>Ingredients :</strong> <%=receipes[i].ingredients%></p>
+                            <p> <strong>Directions :</strong> <%=receipes[i].directions%></p>
+                            <hr/>
+
+
+                            <a href="/delete/<%=receipes[i]._id%>" type="submit" class=" btn-danger delete-recipe" >
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+
+                            <a href="/edit/<%=receipes[i]._id%>" type="submit" class=" btn-default edit-recipe" >
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                            </a>
+
+
+                   </div>
+             <%}%>
+           </ul>
+          <form class="" action="/logout" method="post">
+                 <button type="submit" name="button" class="btn">Log Out</button>
+          </form>
+        </div>
+
+
+
+        <!--Add form Modal -->
+ <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <h4 class="modal-title" id="myModalLabel">Add Recipe</h4>
+       </div>
+       <div class="modal-body">
+          <form  action="/addRecipe" method="post">
+            <div class="form-group">
+              <label>Receipe</label>
+              <input type="text" name="receipe" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label>Ingredients</label>
+              <textarea name="ingredients" rows="3" cols="20" class="form-control">
+              </textarea>
+            </div>
+
+
+            <div class="form-group">
+              <label>Directions</label>
+              <textarea name="directions" rows="8" cols="80" class="form-control">
+              </textarea>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn-danger">Save changes</button>
+        </div>
+
+          </form>
+       </div>
+   </div>
+ </div>
+
+ <!--Jquery cdn-->
+ <script
+   src="https://code.jquery.com/jquery-2.2.4.min.js"
+   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+   crossorigin="anonymous"></script>
+
+
+ <!-- Latest compiled and minified JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,121 @@
+h1
+{
+  font-family: verdana;
+  text-align: center;
+
+}
+header
+{
+  padding:1rem;
+  background: #f4f4f4;
+}
+
+
+.container
+{
+  margin: 0 auto;
+  width:540px;
+  background: #f4f4f4;
+   border-radius: 5px;
+   overflow-y: visible;
+  }
+
+  .well
+  {
+    margin: 0 auto;
+    width:640px;
+    background: #f4f4f4;
+     border-radius: 5px;
+     overflow-y: visible;
+
+  }
+
+
+
+  #my-form {
+    padding: 2rem;
+    background: #f4f4f4;
+    overflow: auto;
+  }
+#msg
+{
+  padding: 2rem;
+  background: #f4f4f4;
+  overflow: auto;
+}
+
+
+#my-form label {
+  display: block;
+}
+
+
+#my-form input[type='text'] , input[type='password']
+{
+   width: 100%;
+   padding: 8px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   display: block;
+}
+
+.btn {
+   width: 540px;
+   padding: 8px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   display: block;
+   background: #333;
+   color: #fff;
+   margin: 0 auto;
+}
+
+.btn-primary
+{
+  width: 540px;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px ;
+  display: block;
+  background: #337ab7;
+  color: #fff;
+  margin:0 auto;
+}
+
+.btn-primary:hover
+{
+  color: #fff;
+ background-color: #286090;
+ border-color: #204d74;
+}
+
+
+
+.btn:hover {
+  background: #444;
+}
+
+
+
+.btn-logout
+{
+     border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 5px;
+  background: #f4f4f4;
+  margin: 5px 0;
+}
+
+a
+{
+  color: red;
+}
