@@ -9,7 +9,7 @@ nodejs_passport_login simple receipe_app
        passport
        password hashing using (bcryptjs)
        passport-local strategy     
-# end points
+# end points (Heroku Deploy : https://receipe-app-test1.herokuapp.com)
        /register         -->Get
        /registerPost     -->Post 
        /login            -->Get
